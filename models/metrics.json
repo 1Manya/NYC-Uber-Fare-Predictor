@@ -1,0 +1,25 @@
+{
+  "best_model": "LightGBM",
+  "results": {
+    "Linear Regression (Ridge)": {
+      "r2": 0.8247,
+      "mae": 1.965,
+      "rmse": 3.964
+    },
+    "XGBoost": {
+      "r2": 0.8521,
+      "mae": 1.838,
+      "rmse": 3.64
+    },
+    "LightGBM": {
+      "r2": 0.8545,
+      "mae": 1.825,
+      "rmse": 3.611
+    },
+    "Ensemble (XGBoost + LightGBM)": {
+      "r2": 0.8541,
+      "mae": 1.827,
+      "rmse": 3.616
+    }
+  }
+}
