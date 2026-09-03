@@ -15,8 +15,10 @@ try:
     import shap
     import matplotlib.pyplot as plt
     SHAP_AVAILABLE = True
-except ImportError:
+    SHAP_IMPORT_ERROR = None
+except Exception as e:
     SHAP_AVAILABLE = False
+    SHAP_IMPORT_ERROR = f"{type(e).__name__}: {e}"
 
 st.set_page_config(page_title="NYC Uber Fare Predictor", page_icon="🚕", layout="wide")
 
@@ -296,6 +298,8 @@ with tab_predict:
         with st.expander("🔍 Explain this prediction (SHAP)"):
             if not SHAP_AVAILABLE:
                 st.info("SHAP isn't installed. Run `pip install shap` and restart the app to enable this.")
+                if SHAP_IMPORT_ERROR:
+                    st.code(f"Import error: {SHAP_IMPORT_ERROR}")
             else:
                 background = get_shap_background()
                 if background is None:
