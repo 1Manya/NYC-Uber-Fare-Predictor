@@ -5,7 +5,7 @@ passenger count —> trained on the [Kaggle NYC Taxi Fare Prediction
 dataset](https://www.kaggle.com/c/new-york-city-taxi-fare-prediction) and
 served through an interactive Streamlit app.
 
-**Live demo:** _add your deployed Streamlit Community Cloud link here_
+**Live demo:** https://nyc-uber-fare-predictor.streamlit.app/
 
 ## Results
 
@@ -132,30 +132,6 @@ joblib
 seaborn
 ```
 
-## Deploying (Streamlit Community Cloud — free)
-
-1. **Push the repo to GitHub**, including `app.py`, `src/`, `requirements.txt`,
-   and `models/` (the trained `.joblib` + `metrics.json` — train locally
-   first and commit these so the deployed app doesn't need to retrain).
-   - `data/uber.csv` is ~190k rows; if it's too large for a normal GitHub
-     push, either use [Git LFS](https://git-lfs.com/) or skip committing it
-     entirely — the app only needs `data/uber.csv` for the optional SHAP
-     background sample, and degrades gracefully (shows a warning instead
-     of crashing) if it's missing.
-2. Go to [share.streamlit.io](https://share.streamlit.io) and sign in with
-   GitHub.
-3. Click **"New app"**, select your repository, branch (`main`), and set
-   the main file path to `app.py`.
-4. Click **Deploy**. Streamlit Community Cloud installs everything from
-   `requirements.txt` and starts the app — first deploy usually takes a
-   couple of minutes.
-5. Once live, copy the app's URL into the **Live demo** line at the top of
-   this README.
-6. Any future `git push` to the connected branch auto-redeploys the app.
-
-If the deploy fails on missing packages, double check `requirements.txt` is
-at the repo root (not inside `src/`) — that's the only file Streamlit Cloud
-reads for dependencies.
 
 ## Tech stack
 
